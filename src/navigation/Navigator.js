@@ -10,9 +10,13 @@ import Settings from 'src/screens/Settings';
 const Stack = createStackNavigator();
 const Tabs = createBottomTabNavigator();
 
+const screenOptions = {
+  headerShown: false,
+};
+
 function Main() {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator screenOptions={screenOptions}>
       <Stack.Screen name="Initial" component={Initial} />
       <Stack.Screen name="Home" component={Home} />
       <Stack.Screen name="Battle" component={Battle} />
