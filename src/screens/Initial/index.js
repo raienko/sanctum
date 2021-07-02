@@ -5,8 +5,12 @@ import navigation from 'src/navigation';
 
 export default function Initial() {
   return (
-    <View style={styles.wrapper}>
-      <Text value="Initial" onPress={() => navigation.navigate('Home')} />
+    <View style={styles.wrapper} testID="initial_screen">
+      <Text
+        value="Initial"
+        testID="initial_text"
+        onPress={() => navigation.navigate('Home')}
+      />
     </View>
   );
 }

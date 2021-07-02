@@ -6,7 +6,11 @@ import navigation from 'src/navigation';
 export default function Battle() {
   return (
     <View style={styles.wrapper}>
-      <Text value="Battle" onPress={() => navigation.navigate('Settings')} />
+      <Text
+        value="Battle"
+        onPress={() => navigation.navigate('Settings')}
+        testID="battle_screen"
+      />
     </View>
   );
 }

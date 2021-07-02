@@ -5,8 +5,12 @@ import navigation from 'src/navigation';
 
 export default function Home() {
   return (
-    <View style={styles.wrapper}>
-      <Text value="Home" onPress={() => navigation.navigate('Battle')} />
+    <View style={styles.wrapper} testID="home_screen">
+      <Text
+        value="Home"
+        onPress={() => navigation.navigate('Battle')}
+        testID="home_text"
+      />
     </View>
   );
 }

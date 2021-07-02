@@ -8,7 +8,11 @@
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint .",
-    "postinstall": "cd ios && pod install"
+    "postinstall": "cd ios && pod install",
+    "detox_build_ios": "detox build -c ios",
+    "detox_test_ios": "detox test -c ios",
+    "detox_build_android": "detox build -c android",
+    "detox_test_android": "detox test -c android"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "^1.15.5",
@@ -34,6 +38,7 @@
     "@react-native-community/eslint-config": "^3.0.0",
     "babel-jest": "^27.0.6",
     "babel-plugin-module-resolver": "^4.1.0",
+    "detox": "^18.18.1",
     "eslint": "^7.29.0",
     "jest": "^27.0.6",
     "metro-react-native-babel-preset": "^0.66.0",
