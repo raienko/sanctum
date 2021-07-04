@@ -8,7 +8,7 @@ export default function Home() {
     <View style={styles.wrapper} testID="home_screen">
       <Text
         value="Home"
-        onPress={() => navigation.navigate('Battle')}
+        onPress={() => navigation.navigate('Dungeon')}
         testID="home_text"
       />
     </View>
