@@ -6,25 +6,25 @@ import Cell from './Cell';
 export default class Grid extends PureComponent {
   static propTypes = {
     grid: PropTypes.array,
-    children: PropTypes.node,
+    active: PropTypes.string,
   };
 
   static defaultProps = {
     grid: [],
-    children: null,
+    active: '',
   };
 
   _renderCell = (x, y) => {
     const id = `${x}_${y}`;
+    const {active} = this.props;
     return <Cell key={id} x={x} y={y} active={(x + y) % 2} />;
   };
 
   render() {
-    const {grid, children} = this.props;
+    const {grid} = this.props;
     return (
       <View style={styles.wrapper}>
         {grid.map(y => y.map(x => this._renderCell(x, y)))}
-        {children}
       </View>
     );
   }
@@ -35,13 +35,5 @@ const styles = StyleSheet.create({
     flex: 1,
     borderWidth: 2,
     backgroundColor: 'yellow',
-  },
-  cell: {
-    position: 'absolute',
-    backgroundColor: 'green',
-    borderWidth: 1,
-  },
-  active: {
-    backgroundColor: 'orange',
   },
 });
