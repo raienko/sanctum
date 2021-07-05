@@ -21,7 +21,8 @@ export default function GameBoard() {
 
 const styles = StyleSheet.create({
   wrapper: {
-    flex: 1,
+    width: 200,
+    height: 200,
     overflow: 'hidden',
     borderWidth: 2,
   },

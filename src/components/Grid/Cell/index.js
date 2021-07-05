@@ -18,7 +18,8 @@ export default class Cell extends React.PureComponent {
 
   render() {
     const {x, y, active} = this.props;
-    const cell = grid[x][y];
+    const cell = grid[y][x];
+
     if (!cell) {
       return null;
     }
@@ -36,6 +37,7 @@ export default class Cell extends React.PureComponent {
 
 const styles = StyleSheet.create({
   wrapper: {
+    position: 'absolute',
     backgroundColor: 'green',
     borderWidth: 1,
   },

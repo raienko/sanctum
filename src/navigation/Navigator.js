@@ -7,6 +7,7 @@ import Home from 'src/screens/Home';
 import Initial from 'src/screens/Initial';
 import Settings from 'src/screens/Settings';
 import Dungeon from 'src/screens/Dungeon';
+import Exploration from 'src/screens/Exploration';
 
 const Stack = createStackNavigator();
 const Tabs = createBottomTabNavigator();
@@ -18,6 +19,7 @@ const screenOptions = {
 function Main() {
   return (
     <Stack.Navigator screenOptions={screenOptions}>
+      <Stack.Screen name="Exploration" component={Exploration} />
       <Stack.Screen name="Initial" component={Initial} />
       <Stack.Screen name="Home" component={Home} />
       <Stack.Screen name="Dungeon" component={Dungeon} />

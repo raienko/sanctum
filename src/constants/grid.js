@@ -5,15 +5,15 @@ export const cellSize = rem(15);
 export const generateGrid = (width, height, size) => {
   const grid = [];
 
-  for (let x = 0; x < width; x++) {
-    grid[x] = [];
-    for (let y = 0; y < height; y++) {
+  for (let y = 0; y < height; y++) {
+    grid[y] = [];
+    for (let x = 0; x < width; x++) {
       const x1 = x * size;
       const y1 = y * size;
       const x2 = x1 + size;
       const y2 = y1 + size;
 
-      grid[x][y] = {
+      grid[y][x] = {
         x1,
         y1,
         x2,

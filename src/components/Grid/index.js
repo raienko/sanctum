@@ -14,19 +14,29 @@ export default class Grid extends PureComponent {
     active: '',
   };
 
-  _renderCell = (x, y) => {
-    const id = `${x}_${y}`;
+  constructor(props) {
+    super(props);
+
+    const {grid} = this.props;
+    this.state = {
+      cells: [],
+    };
+
+    grid.forEach((row, y) => {
+      row.forEach((cell, x) => {
+        this.state.cells.push({id: `${x}_${y}`, x, y});
+      });
+    });
+  }
+
+  _renderCell = ({x, y, id}) => {
     const {active} = this.props;
-    return <Cell key={id} x={x} y={y} active={(x + y) % 2} />;
+    return <Cell key={id} x={x} y={y} active={!!((x + y) % 2)} />;
   };
 
   render() {
-    const {grid} = this.props;
-    return (
-      <View style={styles.wrapper}>
-        {grid.map(y => y.map(x => this._renderCell(x, y)))}
-      </View>
-    );
+    const {cells} = this.state;
+    return <View style={styles.wrapper}>{cells.map(this._renderCell)}</View>;
   }
 }
 
