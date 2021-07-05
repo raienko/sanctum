@@ -2,7 +2,7 @@ import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import Text from 'src/components/Text';
 import navigation from 'src/navigation';
-import SideScroller from './SideScroller';
+import SideScroller from '../../components/SideScroller';
 
 import dungeon from './dungeon_0';
 

@@ -2,7 +2,7 @@ import React, {useRef} from 'react';
 import {Animated, View, StyleSheet, Easing} from 'react-native';
 import PropTypes from 'prop-types';
 import {rem} from 'rn-units';
-import Layer from '../Layer';
+import Layer from './Layer';
 
 SideScroller.propTypes = {
   level: PropTypes.object,
