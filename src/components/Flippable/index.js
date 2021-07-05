@@ -13,6 +13,8 @@ Flippable.propTypes = {
 
 Flippable.defaultProps = {
   register: () => {},
+  front: () => null,
+  back: () => null,
   duration: 300,
 };
 

@@ -1,21 +1,25 @@
-import React, {useEffect, useRef} from 'react';
+import React, {useRef} from 'react';
 import {Animated, View, StyleSheet, Easing} from 'react-native';
 import PropTypes from 'prop-types';
 import {rem} from 'rn-units';
 import Layer from '../Layer';
 
 SideScroller.propTypes = {
-  level: PropTypes.object.isRequired,
+  level: PropTypes.object,
   children: PropTypes.node,
+};
+
+SideScroller.defaultProps = {
+  level: null,
 };
 
 export default function SideScroller({level, children}) {
   const progress = useRef(new Animated.Value(0)).current;
   let animation = useRef().current;
 
-  useEffect(() => {
-    setTimeout(() => move(100, 5000), 100);
-  }, []);
+  if (!level) {
+    return null;
+  }
 
   const stop = () => animation?.stop();
 
